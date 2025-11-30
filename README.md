@@ -1,7 +1,7 @@
 # Kalem-RS485-5V-Basic
 
 Non-isolated 5 V RS-485 transceiver module based on **MAX485**.  
-Designed for easy connection between microcontrollers (Arduino, STM32, etc.) and RS-485 networks in industrial and hobby projects.
+Designed for easy connection between microcontrollers and RS-485 networks in industrial and hobby projects.
 
 ---
 
@@ -16,13 +16,13 @@ Designed for easy connection between microcontrollers (Arduino, STM32, etc.) and
 - **SM712** TVS diode pair on A/B for surge and ESD protection  
 - Local decoupling: **100 nF + 10 µF** on VCC  
 - 2.54 mm pin header on MCU side, screw terminal on bus side
-- Compact PCB: **32.766 × 12.700 mm**, 25.4 mm between pin rows
+- Compact PCB: **32.766 × 12.700 mm**, 25.4 mm between pin rows (breadboard compatible)
 
 ---
 
 ## Pinout
 
-### MCU side header (left, top → bottom)
+### MCU side header
 
 | Pin | Name | Direction | Description                                  |
 |-----|------|-----------|----------------------------------------------|
@@ -39,7 +39,7 @@ Designed for easy connection between microcontrollers (Arduino, STM32, etc.) and
 If separate control of DE and /RE is needed, the solder bridge between them
 can be cut and wired individually.
 
-### RS-485 bus screw terminal (right, top → bottom)
+### RS-485 bus screw terminal + headers
 
 | Pin | Name | Description                          |
 |-----|------|--------------------------------------|
@@ -78,8 +78,6 @@ In firmware:
    - Send UART bytes.
    - Wait until transmission complete.
 3. Set DIR pin **LOW** again to release the bus and receive.
-
-This applies to Arduino, STM32, and any other MCU.
 
 ---
 
