@@ -83,28 +83,3 @@ This applies to Arduino, STM32, and any other MCU.
 
 ---
 
-## Example code
-
-### Arduino (master – short example)
-
-```cpp
-#define RS485_SERIAL  Serial1      // or Serial on Uno/Nano
-#define RS485_DIR_PIN 2            // connected to DE/RE
-
-void setTx() { digitalWrite(RS485_DIR_PIN, HIGH); }
-void setRx() { digitalWrite(RS485_DIR_PIN, LOW);  }
-
-void setup() {
-  pinMode(RS485_DIR_PIN, OUTPUT);
-  setRx();
-  RS485_SERIAL.begin(9600);
-}
-
-void loop() {
-  setTx();
-  RS485_SERIAL.print("PING\n");
-  RS485_SERIAL.flush();
-  setRx();
-
-  delay(1000);
-}
